@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/bmizerany/pat"
-	"go_ws/internal/handlers"
+	"go_chat/internal/handlers"
 	"net/http"
 )
 

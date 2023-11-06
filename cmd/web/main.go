@@ -1,10 +1,13 @@
 package main
 
 import (
-	"go_ws/internal/handlers"
+	"fmt"
+	"go_chat/internal/handlers"
 	"log"
 	"net/http"
 )
+
+const port = "8080"
 
 func main() {
 	mux := routes()
@@ -12,6 +15,6 @@ func main() {
 	log.Println("Starting channel listener")
 	go handlers.ListenToWSChannel()
 
-	log.Println("Starting web server on port 8000")
-	_ = http.ListenAndServe(":8000", mux)
+	log.Println("Starting web server on port:", port)
+	_ = http.ListenAndServe(fmt.Sprintf(":%s", port), mux)
 }
